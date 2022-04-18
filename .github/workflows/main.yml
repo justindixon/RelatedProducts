@@ -45,12 +45,12 @@ jobs:
         name: 'Run Code Quality Tests'
         runs-on: ubuntu-latest
         steps:
-            - name: 'Checkout source code'
-              uses: actions/checkout@v2
+            - name: 'Checkout Source Code'
+              uses: actions/checkout@v3
 
-            - name: 'Restore node_modules cache'
+            - name: 'Restore node_modules Cache'
               id: cache-npm
-              uses: actions/cache@v2
+              uses: actions/cache@v3
               with:
                   path: node_modules
                   key: npm-${{ hashFiles('**/package-lock.json') }}
@@ -165,69 +165,14 @@ jobs:
 
             - name: 'Run Apex Tests'
               run: npm run test:apex
-
-            - name: 'Delete Base Scratch Org'
-              run: npm run org:delete:noprompt
-              if: ${{ always() }}
-
-    experience-cloud-scratch-org-tests:
-        name: 'Run Experience Cloud Scratch Org Tests'
-        needs: [code-quality-tests]
-        runs-on: ubuntu-latest
-        environment: 'Experience Cloud Scratch Org'
-        steps:
-            - name: 'Checkout source code'
-              uses: actions/checkout@v2
-
-            - name: 'Restore node_modules cache'
-              id: cache-npm
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: npm-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: |
-                      npm-${{ env.cache-name }}-
-                      npm-
-            - name: 'Install npm dependencies'
-              if: steps.cache-npm.outputs.cache-hit != 'true'
-              run: npm ci
-
-            - name: 'Authorize Dev Hub'
-              shell: bash
-              run: |
-                  echo "${{ env.DEV_HUB_JWT_SERVER_KEY }}" > ./jwt-server.key
-                  npx sfdx force:auth:jwt:grant --instanceurl ${{ env.DEV_HUB_AUTH_URL }} --clientid ${{ env.DEV_HUB_CONSUMER_KEY }} --username ${{ env.DEV_HUB_BOT_USERNAME }} --jwtkeyfile ./jwt-server.key --setdefaultdevhubusername
-              env:
-                  DEV_HUB_AUTH_URL: ${{ secrets.DEV_HUB_AUTH_URL }}
-                  DEV_HUB_BOT_USERNAME: ${{ secrets.DEV_HUB_BOT_USERNAME }}
-                  DEV_HUB_CONSUMER_KEY: ${{ secrets.DEV_HUB_CONSUMER_KEY }}
-                  DEV_HUB_JWT_SERVER_KEY: ${{ secrets.DEV_HUB_JWT_SERVER_KEY }}
-
-            - name: 'Create Experience Cloud Scratch Org'
-              run: npx sfdx force:org:create --durationdays 1 --definitionfile ./config/scratch-orgs/experience-cloud-scratch-def.json --wait 20 --setdefaultusername --json
-
-            - name: 'Deploy Test Experience Site Metadata'
-              run: npm run experience:deploy
-
-            - name: 'Deploy Source to Scratch Org'
-              run: npm run source:deploy
-
-            - name: 'Assign Logger Admin Permission Set'
-              run: npm run permset:assign:admin
-
-            - name: 'Run Apex Tests'
-              run: npm run test:apex
-
-            - name: 'Delete unsupported code coverage files'
-              run: rm ./test-coverage/apex/test-result-707*-codecoverage.json
-
+              
             - name: 'Upload Apex test code coverage to Codecov.io'
               uses: codecov/codecov-action@v2.0.2
               with:
                   token: ${{ secrets.CODECOV_TOKEN }}
                   flags: Apex
 
-            - name: 'Delete Experience Cloud Scratch Org'
+            - name: 'Delete Base Scratch Org'
               run: npm run org:delete:noprompt
               if: ${{ always() }}
 
