@@ -4,7 +4,7 @@
             <lightning-carousel>
                 <template for:each={products} for:item="product">
                     <lightning-carousel-image key={product.Id}
-                        src = {product.DisplayURL}
+                        src = {product.srcURL}
                         header = {product.Name}
                         description = {product.Description}
                         alternative-text = {product.Name}

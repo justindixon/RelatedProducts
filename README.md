@@ -26,6 +26,11 @@ Top 5 Products Frequently Bought Together
 2. Flow Action available to return the top 5 frequently bought products.
 3. Works only with Order Products for now.
 
+## Road Map
+1. Enable For Opportunity Products
+2. Enable for CPQ Quote Line Products
+3. Units Tests for LWC
+
 ---
 
 <!--## Installing
