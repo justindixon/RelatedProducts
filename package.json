@@ -85,6 +85,7 @@
     "@salesforce/eslint-plugin-lightning": "latest",
     "@salesforce/sfdx-lwc-jest": "latest",
     "@salesforce/sfdx-scanner": "latest",
+    "jest": "latest",
     "eslint": "latest",
     "eslint-config-prettier": "latest",
     "eslint-plugin-import": "latest",
