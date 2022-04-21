@@ -6,17 +6,12 @@ on:
     push:
         branches:
             - main
-            - 'devops/**'
         paths-ignore:
-            - 'content/**'
             - 'docs/**'
-            - 'examples/**'
-            - 'packages/**'
             - '.forceignore'
             - '.gitignore'
             - '.prettierignore'
             - '.prettierrc'
-            - 'CONTRIBUTING.md'
             - 'LICENSE'
             - 'package.json'
             - 'README.md'
@@ -46,11 +41,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: 'Checkout Source Code'
-              uses: actions/checkout@v3
+              uses: actions/checkout@v2
 
             - name: 'Restore node_modules Cache'
               id: cache-npm
-              uses: actions/cache@v3
+              uses: actions/cache@v2
               with:
                   path: node_modules
                   key: npm-${{ hashFiles('**/package-lock.json') }}

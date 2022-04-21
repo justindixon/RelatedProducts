@@ -30,6 +30,7 @@ Top 5 Products Frequently Bought Together
 1. Enable For Opportunity Products
 2. Enable for CPQ Quote Line Products
 3. Units Tests for LWC
+4. Enable additional file types (other than .jpq)
 
 ---
 
