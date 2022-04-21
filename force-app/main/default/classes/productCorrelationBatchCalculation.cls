@@ -17,6 +17,6 @@ public with sharing class productCorrelationBatchCalculation {
     }
 
     public void finish(Database.BatchableContext bc){
-        System.debug('Batch Product Correlation Finished');
+        System.debug('Batch Product Correlation Finished ');
     }
 }
