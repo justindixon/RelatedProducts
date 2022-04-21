@@ -1,0 +1,93 @@
+# Build Pipeline For Related Products.
+
+name: Build
+
+on:
+    push:
+        branches:
+            - main
+            - 'devops/**'
+        paths-ignore:
+            - 'content/**'
+            - 'docs/**'
+            - 'examples/**'
+            - 'packages/**'
+            - '.forceignore'
+            - '.gitignore'
+            - '.prettierignore'
+            - '.prettierrc'
+            - 'CONTRIBUTING.md'
+            - 'LICENSE'
+            - 'package.json'
+            - 'README.md'
+            - './**/README.md'
+            - 'sfdx-project.json'
+    pull_request:
+        types: [opened, synchronize, reopened]
+        paths-ignore:
+            - 'content/**'
+            - 'docs/**'
+            - 'examples/**'
+            - 'packages/**'
+            - '.forceignore'
+            - '.gitignore'
+            - '.prettierignore'
+            - '.prettierrc'
+            - 'CONTRIBUTING.md'
+            - 'LICENSE'
+            - 'package.json'
+            - 'README.md'
+            - './**/README.md'
+            - 'sfdx-project.json'
+
+jobs:
+    code-quality-tests:
+        name: 'Run Code Quality Tests'
+        runs-on: ubuntu-latest
+        steps:
+            - name: 'Checkout Source Code'
+              uses: actions/checkout@v3
+
+            - name: 'Restore node_modules Cache'
+              id: cache-npm
+              uses: actions/cache@v3
+              with:
+                  path: node_modules
+                  key: npm-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      npm-${{ env.cache-name }}-
+                      npm-
+            - name: 'Install npm dependencies'
+              if: steps.cache-npm.outputs.cache-hit != 'true'
+              run: npm ci
+
+            - name: 'Authorize Dev Hub'
+              if: ${{ github.event_name == 'pull_request' }}
+              shell: bash
+              run: |
+                  echo "${{ env.DEV_HUB_JWT_SERVER_KEY }}" > ./jwt-server.key
+                  npx sfdx force:auth:jwt:grant --instanceurl ${{ env.DEV_HUB_AUTH_URL }} --clientid ${{ env.DEV_HUB_CONSUMER_KEY }} --username ${{ env.DEV_HUB_BOT_USERNAME }} --jwtkeyfile ./jwt-server.key --setdefaultdevhubusername
+              env:
+                  DEV_HUB_AUTH_URL: ${{ secrets.DEV_HUB_AUTH_URL }}
+                  DEV_HUB_BOT_USERNAME: ${{ secrets.DEV_HUB_BOT_USERNAME }}
+                  DEV_HUB_CONSUMER_KEY: ${{ secrets.DEV_HUB_CONSUMER_KEY }}
+                  DEV_HUB_JWT_SERVER_KEY: ${{ secrets.DEV_HUB_JWT_SERVER_KEY }}
+
+            - name: 'Verify package version number is updated'
+              if: ${{ github.event_name == 'pull_request' }}
+              run: npm run package:version:number:verify
+
+            - name: 'Verify LWC with ESLint'
+              run: npm run lint:verify:lwc
+
+            - name: 'Verify Apex with SFDX Scanner'
+              run: |
+                  npm run sfdx:plugins:link:scanner
+                  npm run lint:verify:apex
+            # TODO - uncomment - temporarily commented-out due to an issue with apexdocs in the pipeline
+            # - name: 'Verify docs are updated'
+            #   run: npm run docs:verify
+
+            - name: 'Verify formatting with Prettier'
+              run: npm run prettier:verify
+
