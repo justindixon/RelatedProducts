@@ -4,7 +4,7 @@
   "description": "Related Products",
   "author": "Justin Dixon",
   "license": "MIT",
-  "repository" : {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/justindixon/RelatedProducts.git"
   },
@@ -13,15 +13,15 @@
     "url": "https://github.com/justindixon/RelatedProducts/issues"
   },
   "keywords": [
-      "flow",
-      "salesforce",
-      "apex",
-      "lightning components",
-      "lwc"
+    "flow",
+    "salesforce",
+    "apex",
+    "lightning components",
+    "lwc"
   ],
   "engines": {
-      "node": ">= 12.18.0",
-      "npm": ">= 6.14.0"
+    "node": ">= 12.18.0",
+    "npm": ">= 6.14.0"
   },
   "scripts": {
     "devhub:details": "pwsh ./scripts/build/get-devhub-org-details.ps1",
@@ -50,7 +50,7 @@
     "permset:assign:admin": "sfdx force:user:permset:assign --permsetname LoggerAdmin",
     "plugin:version:create:log-retention-rules": "sfdx force:package:version:create --json --package \"Nebula Logger - Core Plugin - Log Retention Rules\" --codecoverage --installationkeybypass --wait 30",
     "plugin:version:create:logger-admin-dashboard": "sfdx force:package:version:create --json --package \"Nebula Logger - Core Plugin - Logger Admin Dashboard\" --codecoverage --installationkeybypass --wait 30",
-    "plugin:version:create:slack": "sfdx force:package:version:create --json --package \"Nebula Logger - Core Plugin - Slack\" --codecoverage --installationkeybypass --wait 30", 
+    "plugin:version:create:slack": "sfdx force:package:version:create --json --package \"Nebula Logger - Core Plugin - Slack\" --codecoverage --installationkeybypass --wait 30",
     "prettier:fix": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
     "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
     "sfdx:plugins:link:bummer": "npx sfdx plugins:link ./node_modules/@jongpie/sfdx-bummer-plugin",
@@ -96,5 +96,4 @@
     "pwsh": "latest",
     "sfdx-cli": "latest"
   }
-
 }

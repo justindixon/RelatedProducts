@@ -22,11 +22,10 @@ export default class FreqProdImgCarousel extends LightningElement {
             })
             .catch(error => {
                 this.error = error;
-                console.log(error);
             });
 
         }
         
-    };
+    }
 
 }
