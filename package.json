@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "follow-redirects": ">=1.14.8",
-    "jest": "^27.5.1",
+    "jest": "latest",
     "markdown-it": ">=12.3.2",
     "marked": ">=4.0.10",
     "nanoid": ">=3.1.31",
