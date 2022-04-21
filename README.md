@@ -24,10 +24,11 @@ Top 5 Products Frequently Bought Together
 
 1. Lightning Web Component showing frequently bought together products.
 2. Flow Action available to return the top 5 frequently bought products.
+3. Works only with Order Products for now.
 
 ---
 
-## Installing
+<!--## Installing
 
 Related Products is available as both an unlocked package and a managed package. The metadata is the same in both packages, but there are some differences in the available functionality & features. All examples in `README` are for the unlocked package (no namespace) - simply add the `Nebula` namespace to the examples if you are using the managed package.
 
@@ -59,6 +60,7 @@ Related Products is available as both an unlocked package and a managed package.
 </table>
 
 ---
+--->
 
 ## Getting Started
 
