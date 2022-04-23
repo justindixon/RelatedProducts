@@ -87,3 +87,33 @@ jobs:
 
       - name: "Verify formatting with Prettier"
         run: npm run prettier:verify
+  
+  lwc-tests:
+        name: 'Run LWC Tests'
+        needs: [code-quality-tests]
+        runs-on: ubuntu-latest
+        steps:
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+
+            - name: 'Restore node_modules cache'
+              id: cache-npm
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: npm-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      npm-${{ env.cache-name }}-
+                      npm-
+            - name: 'Install npm dependencies'
+              if: steps.cache-npm.outputs.cache-hit != 'true'
+              run: npm ci
+
+            - name: 'Run LWC Tests'
+              run: npm run test:lwc
+
+            - name: 'Upload LWC code coverage to Codecov.io'
+              uses: codecov/codecov-action@v2.0.2
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  flags: LWC

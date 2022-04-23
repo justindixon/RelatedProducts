@@ -1,6 +1,6 @@
 import { LightningElement, api } from "lwc";
 import getFrequentProducts from "@salesforce/apex/FreqProdImgCarouselController.getFrequentProducts";
-import myContentAsset from "@salesforce/contentAssetUrl";
+import myContentAsset from "@salesforce/contentAssetUrl/";
 
 export default class FreqProdImgCarousel extends LightningElement {
   @api recordId;
