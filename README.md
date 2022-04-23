@@ -1,8 +1,8 @@
 # Frequently Bought Together Products for Salesforce
 
-<!---[![Build](https://github.com/jongpie/NebulaLogger/actions/workflows/build.yml/badge.svg)](https://github.com/jongpie/NebulaLogger/actions/workflows/build.yml)
-[![codecov](https://codecov.io/gh/jongpie/NebulaLogger/branch/main/graph/badge.svg?token=1DJPDRM3N4)](https://codecov.io/gh/jongpie/NebulaLogger)
---->
+[![Build](https://github.com/justindixon/RelatedProducts/actions/workflows/build.yml/badge.svg)](https://github.com/jongpie/NebulaLogger/actions/workflows/build.yml)
+[![codecov](https://codecov.io/gh/justindixon/RelatedProducts/branch/main/graph/badge.svg?token=ERQTH8T0N7)](https://codecov.io/gh/justindixon/RelatedProducts)
+
 
 Top 5 Products Frequently Bought Together
 
