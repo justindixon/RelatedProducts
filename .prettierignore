@@ -2,9 +2,18 @@
 # More information: https://prettier.io/docs/en/ignore.html
 #
 
-**/staticresources/**
-.localdevserver
-.sfdx
-.vscode
+# Folders to exclude
+.localdevserver/
+.settings/
+.sfdx/
+.vscode/
+scripts/
+test-coverage/
 
-coverage/
+# NPM
+node_modules/
+package-lock.json
+yarn.lock
+
+# Files to exclude
+*.log

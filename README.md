@@ -27,6 +27,7 @@ Top 5 Products Frequently Bought Together
 3. Works only with Order Products for now.
 
 ## Road Map
+
 1. Enable For Opportunity Products.
 2. Enable for CPQ Quote Line Products.
 3. Units Tests for LWC.
@@ -72,25 +73,18 @@ Related Products is available as both an unlocked package and a managed package.
 
 ## Getting Started
 
-After deployment, assign assign permission set to users:
-    -   `RelatedProductsViewer` provides access to view the lightning component.
+After deployment, assign assign permission set to users: - `RelatedProductsViewer` provides access to view the lightning component.
 
 ---
 
 ### Related Products Lightning Components: Quick Start
 
-
-
-
 ---
 
 ### Related Products Flow Action: Quick Start
 
-
-
 ---
 
 ### Related Products Apex Class: Quick Start
-
 
 ---
