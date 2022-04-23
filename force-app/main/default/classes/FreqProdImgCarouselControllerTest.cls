@@ -1,7 +1,10 @@
 @IsTest
 public class FreqProdImgCarouselControllerTest {
+    /**
+     * @description builds the test data
+     */
     @TestSetup
-    public static void Setup() {
+    public static void setup() {
         //For Creating Account Record.
         Account newAcct = new Account();
         newAcct.BillingCity = 'THOMASTOWN';
@@ -97,6 +100,7 @@ public class FreqProdImgCarouselControllerTest {
     public static void testgetFrequentProducts() {
         Product2 testProduct = [SELECT ID FROM PRODUCT2 LIMIT 1];
         List<Product2> relatedProducts = FreqProdImgCarouselController.getFrequentProducts(testProduct.Id);
+        System.assert(0 < relatedProducts.size(), 'No Related Products Returned');
     }
     
 }

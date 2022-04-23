@@ -1,7 +1,15 @@
+/**
+* @author Justin Dixon
+* @date 22-04-2022
+* @description Test Class.
+*/
 @IsTest
-public class frequentlyBoughtTogetherTest {
-	@TestSetup
-    public static void Setup() {
+public class FrequentlyBoughtTogetherTest {
+	    /**
+     * @description builds the test data
+     */
+    @TestSetup
+    public static void setup() {
         //For Creating Account Record.
         Account newAcct = new Account();
         newAcct.BillingCity = 'THOMASTOWN';
@@ -94,13 +102,14 @@ public class frequentlyBoughtTogetherTest {
     }
     
     @IsTest
-    public static void testfrequentlyBoughtTogether() {
+    public static void testFrequentlyBoughtTogether() {
       List<frequentlyBoughtTogether.request> rqts = new List<frequentlyBoughtTogether.request>();
       frequentlyBoughtTogether.request rqt = new frequentlyBoughtTogether.request();
       Product2 testProduct = [SELECT ID FROM PRODUCT2 LIMIT 1];
       rqt.Product2Id = testProduct.Id;
       rqts.add(rqt);
       List<frequentlyBoughtTogether.Result> rslts = frequentlyBoughtTogether.frequentlyBoughtTogether(rqts);
-      List<Product2> rsltsProducts = rslts[0].frequentProducts;  
+      List<Product2> rsltsProducts = rslts[0].frequentProducts;
+      System.assert(rsltsProducts.size() > 0, 'No Related Products Returned');  
     }
 }

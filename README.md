@@ -27,10 +27,12 @@ Top 5 Products Frequently Bought Together
 3. Works only with Order Products for now.
 
 ## Road Map
-1. Enable For Opportunity Products
-2. Enable for CPQ Quote Line Products
-3. Units Tests for LWC
-4. Enable additional file types (other than .jpq)
+1. Enable For Opportunity Products.
+2. Enable for CPQ Quote Line Products.
+3. Units Tests for LWC.
+4. Enable additional file types (other than .jpq).
+5. Custom Object to hold the top 5 related products.
+6. Scheduled Batch Job to maintain the top 5 related products every night.
 
 ---
 
