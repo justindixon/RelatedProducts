@@ -17,12 +17,12 @@ public without sharing class FrequentlyBoughtTogether {
    * requests.add(request);
    * List<Results> results = freqProds(requests);
    * List<Product2> prods = results[0].frequentProducts;
-   */
-  @SuppressWarnings('PMD.OperationWithLimitsInLoop')
+   */ 
   @InvocableMethod(
     label='Get Frequently Bought Together Products'
     description='Returns 5 Product2 Ids And Their Purchased Together Frequencies'
   )
+  @SuppressWarnings('PMD.OperationWithLimitsInLoop')
   public static List<Result> freqProds(Request[] choosenProducts) {
     List<Result> results = new List<Result>();
     Integer limitCalculation = 49500 / choosenProducts.size();
@@ -54,7 +54,7 @@ public without sharing class FrequentlyBoughtTogether {
         productIds.add((Id) ar.get('Product2Id'));
       }
       List<Product2> frequencyProducts = [
-        SELECT FIELDS(STANDARD), D_Brand2__c, D_Product_Image__c
+        SELECT FIELDS(STANDARD)
         FROM Product2
         WHERE Id = :productIds
         LIMIT 5
