@@ -17,7 +17,7 @@ public without sharing class FrequentlyBoughtTogether {
    * requests.add(request);
    * List<Results> results = freqProds(requests);
    * List<Product2> prods = results[0].frequentProducts;
-   */ 
+   */
   @InvocableMethod(
     label='Get Frequently Bought Together Products'
     description='Returns 5 Product2 Ids And Their Purchased Together Frequencies'
