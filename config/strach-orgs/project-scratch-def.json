@@ -3,7 +3,7 @@
   "edition": "Enterprise",
   "hasSampleData": true,
   "country": "US",
-  "language": "en_US", 
+  "language": "en_US",
   "features": [],
   "settings": {
     "chatterSettings": {
