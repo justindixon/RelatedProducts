@@ -4,7 +4,7 @@
  * @description Holds the request and results format and invocable action
  * to return the top 5 related products
  */
-@SuppressWarnings('PMD.ApexCRUDViolation')
+@SuppressWarnings('PMD.ApexCRUDViolation', 'PMD.OperationWithLimitsInLoop')
 public without sharing class FrequentlyBoughtTogether {
   /**
    * @description invokes the frequently bought together invocable action
@@ -22,7 +22,6 @@ public without sharing class FrequentlyBoughtTogether {
     label='Get Frequently Bought Together Products'
     description='Returns 5 Product2 Ids And Their Purchased Together Frequencies'
   )
-  @SuppressWarnings('PMD.OperationWithLimitsInLoop')
   public static List<Result> freqProds(Request[] choosenProducts) {
     List<Result> results = new List<Result>();
     Integer limitCalculation = 49500 / choosenProducts.size();
