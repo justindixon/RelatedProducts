@@ -152,7 +152,7 @@ jobs:
           DEV_HUB_JWT_SERVER_KEY: ${{ secrets.DEV_HUB_JWT_SERVER_KEY }}
 
       - name: "Create Base Scratch Org"
-        run: npx sfdx force:org:create --durationdays 1 --definitionfile ./config/scratch-orgs/project-scratch-def.json --wait 20 --setdefaultusername --json
+        run: npx sfdx force:org:create --definitionfile ./config/scratch-orgs/base-scratch-def.json -v ${{ env.DEV_HUB_BOT_USERNAME }} --setalias BaseStratchOrg --durationdays 1 --setdefaultusername --json
 
       - name: "Push Source to Scratch Org"
         run: npm run source:push
