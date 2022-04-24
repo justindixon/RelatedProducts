@@ -4,8 +4,7 @@
  * @description Holds the request and results format and invocable action
  * to return the top 5 related products
  */
-@SuppressWarnings('PMD.ApexCRUDViolation')
-@SuppressWarnings('PMD.OperationWithLimitsInLoop')
+@SuppressWarnings('PMD.ApexCRUDViolation, PMD.OperationWithLimitsInLoop')
 public without sharing class FrequentlyBoughtTogether {
   /**
    * @description invokes the frequently bought together invocable action
