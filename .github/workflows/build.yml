@@ -153,6 +153,8 @@ jobs:
 
       - name: "Create Base Scratch Org"
         run: npx sfdx force:org:create --definitionfile ./config/scratch-orgs/base-scratch-def.json -v ${{ env.DEV_HUB_BOT_USERNAME }} --setalias BaseStratchOrg --durationdays 1 --setdefaultusername --json
+        env:
+          DEV_HUB_BOT_USERNAME: ${{ secrets.DEV_HUB_BOT_USERNAME }}
 
       - name: "Push Source to Scratch Org"
         run: npm run source:push
