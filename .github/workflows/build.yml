@@ -152,7 +152,7 @@ jobs:
           DEV_HUB_JWT_SERVER_KEY: ${{ secrets.DEV_HUB_JWT_SERVER_KEY }}
 
       - name: "Create Base Scratch Org"
-        run: npx sfdx force:org:create --definitionfile .config/scratch-orgs/base-scratch-def.json --setalias BaseStratchOrg --durationdays 1 --setdefaultusername --json --loglevel fatal
+        run: npx sfdx force:org:create -f ./config/strach-orgs/base-scratch-def.json --setalias BaseStratchOrg --durationdays 1 --setdefaultusername --json --loglevel fatal
         env:
           DEV_HUB_BOT_USERNAME: ${{ secrets.DEV_HUB_BOT_USERNAME }}
 
