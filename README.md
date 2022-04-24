@@ -3,7 +3,6 @@
 [![Build](https://github.com/justindixon/RelatedProducts/actions/workflows/build.yml/badge.svg)](https://github.com/jongpie/NebulaLogger/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/justindixon/RelatedProducts/branch/main/graph/badge.svg?token=ERQTH8T0N7)](https://codecov.io/gh/justindixon/RelatedProducts)
 
-
 Top 5 Products Frequently Bought Together
 
 ## Unlocked Package - v1.0.0
