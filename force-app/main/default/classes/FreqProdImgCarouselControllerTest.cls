@@ -104,6 +104,6 @@ public class FreqProdImgCarouselControllerTest {
     List<Product2> relatedProducts = FreqProdImgCarouselController.getFrequentProducts(
       testProduct.Id
     );
-    System.assert(0 < relatedProducts.size(), 'No Related Products Returned');
+    System.assert(0 < relatedProducts.size(), 'No Related Products Returned ');
   }
 }
