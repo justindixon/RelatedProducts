@@ -33,29 +33,13 @@ public class FreqProdImgCarouselControllerTest {
     }
     insert productsList;
 
-    // Standard PriceBook.
-    Pricebook2 standardPricebook = new Pricebook2(
-      Id = Test.getStandardPricebookId(),
-      IsActive = true
-    );
-
-    //Execute an update DML on the Pricebook2 record, to make IsStandard to true
-    update standardPricebook;
-
-    //Query for the Pricebook2 record, to check IsStandard field
-    standardPricebook = [
-      SELECT Id, IsStandard
-      FROM Pricebook2
-      WHERE Id = :standardPricebook.Id
-    ];
-    //It should return true
-    System.assertEquals(true, standardPricebook.IsStandard);
+    Id pricebookId = Test.getStandardPricebookId();
 
     //For Creating PriceBookEntries.
     List<PricebookEntry> pbeList = new List<PricebookEntry>();
     for (Integer i = 0; i <= 100; i++) {
       PricebookEntry pbe = new PricebookEntry();
-      pbe.Pricebook2Id = standardPricebook.Id;
+      pbe.Pricebook2Id = pricebookId;
       pbe.Product2Id = productsList[i].Id;
       pbe.UnitPrice = 10;
       pbe.IsActive = true;
@@ -69,9 +53,8 @@ public class FreqProdImgCarouselControllerTest {
       Order o = new Order();
       o.AccountId = newAcct.Id;
       o.Status = 'Draft';
-      o.Pricebook2Id = standardPricebook.Id;
+      o.Pricebook2Id = pricebookId;
       o.EffectiveDate = Date.newInstance(2016, 12, 9);
-      o.PoNumber = '1234';
       orderList.add(o);
     }
     insert orderList;

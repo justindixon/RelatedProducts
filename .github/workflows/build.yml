@@ -165,6 +165,9 @@ jobs:
       - name: "Run Apex Tests"
         run: npm run test:apex
 
+      - name: 'Delete unsupported code coverage files'
+        run: rm ./test-coverage/apex/test-result-707*-codecoverage.json  
+
       - name: "Upload Apex test code coverage to Codecov.io"
         uses: codecov/codecov-action@v2.0.2
         with:

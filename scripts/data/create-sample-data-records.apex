@@ -55,7 +55,6 @@ for(Integer i=0;i<=1000;i++) {
     o.Status = 'Draft';
     o.Pricebook2Id = standardPricebook.Id;
     o.EffectiveDate = Date.newInstance(2016, 12, 9);
-    o.PoNumber = '1234';
     orderList.add(o);
 }
 Insert orderList;

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="force.apex" timestamp="2022-04-25T13:44:37.000Z" hostname="https://site-efficiency-5510.cs6.my.salesforce.com" tests="2" failures="1"  errors="0"  time="0.08">
+        <properties>
+            <property name="outcome" value="Failed"/>
+            <property name="testsRan" value="2"/>
+            <property name="passing" value="1"/>
+            <property name="failing" value="1"/>
+            <property name="skipped" value="0"/>
+            <property name="passRate" value="50%"/>
+            <property name="failRate" value="50%"/>
+            <property name="testStartTime" value="Mon Apr 25 2022 11:44:37 PM"/>
+            <property name="testExecutionTime" value="0.08 s"/>
+            <property name="testTotalTime" value="0.08 s"/>
+            <property name="commandTime" value="0.42 s"/>
+            <property name="hostname" value="https://site-efficiency-5510.cs6.my.salesforce.com"/>
+            <property name="orgId" value="00DN0000000TSvkMAG"/>
+            <property name="username" value="test-iakvixwatve4@example.com"/>
+            <property name="testRunId" value="707N000004RoPMv"/>
+            <property name="userId" value="005N000000BLiFwIAL"/>
+            <property name="coveredLines" value="21"/>
+            <property name="testRunCoverage" value="100%"/>
+            <property name="orgWideCoverage" value="70%"/>
+        </properties>
+        <testcase name="testFrequentlyBoughtTogether" classname="FrequentlyBoughtTogetherTest" time="0.08">
+        </testcase>
+        <testcase name="testgetFrequentProducts" classname="FreqProdImgCarouselControllerTest" time="0.00">
+            <failure message="System.DmlException: Update failed. First exception on row 0 with id 01sN0000002kuK1IAI; first error: UNABLE_TO_LOCK_ROW, unable to obtain exclusive access to this record: []"><![CDATA[Class.FreqProdImgCarouselControllerTest.setup: line 43, column 1]]></failure>
+        </testcase>
+    </testsuite>
+</testsuites>

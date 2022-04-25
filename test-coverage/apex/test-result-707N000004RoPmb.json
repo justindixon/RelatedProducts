@@ -1,0 +1,66 @@
+{
+  "summary": {
+    "outcome": "Failed",
+    "testsRan": 2,
+    "passing": 0,
+    "failing": 2,
+    "skipped": 0,
+    "passRate": "0%",
+    "failRate": "100%",
+    "testStartTime": "Mon Apr 25 2022 11:47:30 PM",
+    "testExecutionTime": "0 ms",
+    "testTotalTime": "0 ms",
+    "commandTime": "410 ms",
+    "hostname": "https://site-efficiency-5510.cs6.my.salesforce.com",
+    "orgId": "00DN0000000TSvkMAG",
+    "username": "test-iakvixwatve4@example.com",
+    "testRunId": "707N000004RoPmb",
+    "userId": "005N000000BLiFwIAL",
+    "testRunCoverage": "0%",
+    "orgWideCoverage": "0%"
+  },
+  "tests": [
+    {
+      "Id": "07MN000000FqCxxMAF",
+      "QueueItemId": "709N0000002ea0OIAQ",
+      "StackTrace": "Class.FrequentlyBoughtTogetherTest.setup: line 48, column 1",
+      "Message": "System.QueryException: List has no rows for assignment to SObject",
+      "AsyncApexJobId": "707N000004RoPmbIAF",
+      "MethodName": "testFrequentlyBoughtTogether",
+      "Outcome": "Fail",
+      "ApexClass": {
+        "Id": "01pN0000006FIIlIAO",
+        "Name": "FrequentlyBoughtTogetherTest",
+        "NamespacePrefix": null
+      },
+      "RunTime": 0,
+      "FullName": "FrequentlyBoughtTogetherTest.testFrequentlyBoughtTogether"
+    },
+    {
+      "Id": "07MN000000FqCy2MAF",
+      "QueueItemId": "709N0000002ea0PIAQ",
+      "StackTrace": "Class.FreqProdImgCarouselControllerTest.setup: line 43, column 1",
+      "Message": "System.QueryException: List has no rows for assignment to SObject",
+      "AsyncApexJobId": "707N000004RoPmbIAF",
+      "MethodName": "testgetFrequentProducts",
+      "Outcome": "Fail",
+      "ApexClass": {
+        "Id": "01pN0000006FIIjIAO",
+        "Name": "FreqProdImgCarouselControllerTest",
+        "NamespacePrefix": null
+      },
+      "RunTime": 0,
+      "FullName": "FreqProdImgCarouselControllerTest.testgetFrequentProducts"
+    }
+  ],
+  "coverage": {
+    "coverage": [],
+    "records": [],
+    "summary": {
+      "totalLines": 0,
+      "coveredLines": 0,
+      "orgWideCoverage": "0%",
+      "testRunCoverage": "0%"
+    }
+  }
+}

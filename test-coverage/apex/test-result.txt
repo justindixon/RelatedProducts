@@ -1,0 +1,28 @@
+=== Test Summary
+NAME                 VALUE                        
+───────────────────  ─────────────────────────────
+Outcome              Passed                       
+Tests Ran            2                            
+Pass Rate            100%                         
+Fail Rate            0%                           
+Skip Rate            0%                           
+Test Run Id          707N000004RoQN5              
+Test Execution Time  227 ms                       
+Org Id               00DN0000000TSvkMAG           
+Username             test-iakvixwatve4@example.com
+Org Wide Coverage    100%                         
+
+
+=== Apex Code Coverage for Test Run 707N000004RoQN5
+TEST NAME                                                  CLASS BEING TESTED             OUTCOME  PERCENT  MESSAGE  RUNTIME (MS)
+─────────────────────────────────────────────────────────  ─────────────────────────────  ───────  ───────  ───────  ────────────
+FrequentlyBoughtTogetherTest.testFrequentlyBoughtTogether  FrequentlyBoughtTogether       Pass     100%              104         
+FreqProdImgCarouselControllerTest.testgetFrequentProducts  FreqProdImgCarouselController  Pass     100%              123         
+FreqProdImgCarouselControllerTest.testgetFrequentProducts  FrequentlyBoughtTogether       Pass     100%              123         
+
+
+=== Apex Code Coverage by Class
+CLASSES                        PERCENT  UNCOVERED LINES
+─────────────────────────────  ───────  ───────────────
+FrequentlyBoughtTogether       100%                    
+FreqProdImgCarouselController  100%                    

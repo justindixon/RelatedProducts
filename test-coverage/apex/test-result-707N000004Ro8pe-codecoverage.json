@@ -1,0 +1,63 @@
+[
+  null,
+  [
+    {
+      "apexClassOrTriggerName": "FreqProdImgCarouselController",
+      "apexClassOrTriggerId": "01pN0000006FIIiIAO",
+      "apexTestClassId": "01pN0000006FIIjIAO",
+      "apexTestMethodName": "testgetFrequentProducts",
+      "numLinesCovered": 9,
+      "numLinesUncovered": 0,
+      "percentage": "100%",
+      "coverage": {
+        "coveredLines": [
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          26,
+          27
+        ],
+        "uncoveredLines": []
+      }
+    },
+    {
+      "apexClassOrTriggerName": "FrequentlyBoughtTogether",
+      "apexClassOrTriggerId": "01pN0000006FIIkIAO",
+      "apexTestClassId": "01pN0000006FIIjIAO",
+      "apexTestMethodName": "testgetFrequentProducts",
+      "numLinesCovered": 21,
+      "numLinesUncovered": 0,
+      "percentage": "100%",
+      "coverage": {
+        "coveredLines": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          32,
+          34,
+          36,
+          37,
+          38,
+          40,
+          45,
+          51,
+          52,
+          53,
+          55,
+          58,
+          61,
+          62,
+          63,
+          65
+        ],
+        "uncoveredLines": []
+      }
+    }
+  ]
+]

@@ -1,12 +1,34 @@
 import { LightningElement, api } from "lwc";
+import {NavigationMixin} from "lightning/navigation";
 import getFrequentProducts from "@salesforce/apex/FreqProdImgCarouselController.getFrequentProducts";
-import myContentAsset from "@salesforce/contentAssetUrl/ProductImage";
 
-export default class FreqProdImgCarousel extends LightningElement {
+
+export default class FreqProdImgCarousel extends NavigationMixin(LightningElement) {
   @api recordId;
+  product;
   products;
   error;
   rendered = false;
+
+  
+  navigateToViewProductPage(event) {
+    const product2Id = event.currentTarget.getAttribute("data-id");
+    console.log(product2Id);
+    this[NavigationMixin.Navigate]({
+        type: 'standard__recordPage',
+        attributes: {
+            recordId: product2Id,
+            objectApiName: 'Product2',
+            actionName: 'view'
+        },
+    });
+  }
+  
+  generateProductCode(productCode) {
+    console.log(productCode);
+    return isNaN(productCode) ? productCode : "X" + productCode;
+  }
+
   renderedCallback() {
     if (!this.rendered) {
       this.rendered = true;
@@ -22,15 +44,19 @@ export default class FreqProdImgCarousel extends LightningElement {
                 result[i].Id +
                 "/view"
             };
+            console.log(this.generateProductCode(result[i].ProductCode));
             results[i] = {
               ...result[i],
-              srcURL: myContentAsset + "/" + result[i].ProductCode + ".jpg"
+              srcURL: window.location.origin.replace(".lightning.force.com", "--c.documentforce.com/file-asset/")
+               + this.generateProductCode(result[i].ProductCode)
             };
           }
+          console.log(results);
           this.products = results;
         })
         .catch((error) => {
           this.error = error;
+          console.log(error);
         });
     }
   }
