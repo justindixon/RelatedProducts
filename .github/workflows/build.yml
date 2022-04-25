@@ -218,12 +218,14 @@ jobs:
       - name: "Authorize Demo Org"
         shell: bash
         run: |
-  #        echo ${{ env.PKG_DEMO_ORG_SFDX_URL }} > ./PKG_DEMO_ORG_SFDX_URL.txt
-  #        npx sfdx auth:sfdxurl:store --sfdxurlfile ./PKG_DEMO_ORG_SFDX_URL.txt --setalias nebula-logger-package-demo
-  #      env:
-  #        PKG_DEMO_ORG_SFDX_URL: ${{ secrets.NEBULA_PKG_DEMO_SANDBOX_SFDX_URL }}
+          echo ${{ env.PKG_DEMO_ORG_SFDX_URL }} > ./PKG_DEMO_ORG_SFDX_URL.txt
+          npx sfdx auth:sfdxurl:store --sfdxurlfile ./PKG_DEMO_ORG_SFDX_URL.txt --setalias related-products-package-demo
+        env:
+          PKG_DEMO_ORG_SFDX_URL: ${{ secrets.NEBULA_PKG_DEMO_SANDBOX_SFDX_URL }}
   #
   #    - name: "Create & Install Package Version"
+  ### sfdx force:package:version:create -v admin@relatedproducts.com -p "Related-Products" -x -c  
+  ### sfdx force:package:version:promote --package 05i5i000000GmcPAAS -n
   #      run: npx pwsh ./scripts/build/create-and-install-package-version.ps1 -targetpackagealias '"Nebula Logger - Core"' -targetreadme ./README.md -targetusername nebula-logger-package-demo
   #
   #    - name: "Commit New Package Version"
