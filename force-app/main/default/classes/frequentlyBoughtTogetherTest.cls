@@ -94,7 +94,9 @@ public class FrequentlyBoughtTogetherTest {
     Product2 testProduct = [SELECT ID FROM PRODUCT2 LIMIT 1];
     rqt.Product2Id = testProduct.Id;
     rqts.add(rqt);
-    List<frequentlyBoughtTogether.Result> rslts = frequentlyBoughtTogether.freqProds(rqts);
+    List<frequentlyBoughtTogether.Result> rslts = frequentlyBoughtTogether.freqProds(
+      rqts
+    );
     List<Product2> rsltsProducts = rslts[0].frequentProducts;
     System.assert(rsltsProducts.size() > 0, 'No Related Products Returned ');
   }

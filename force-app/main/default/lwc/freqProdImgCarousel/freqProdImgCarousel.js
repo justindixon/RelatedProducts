@@ -1,29 +1,29 @@
 import { LightningElement, api } from "lwc";
-import {NavigationMixin} from "lightning/navigation";
+import { NavigationMixin } from "lightning/navigation";
 import getFrequentProducts from "@salesforce/apex/FreqProdImgCarouselController.getFrequentProducts";
 
-
-export default class FreqProdImgCarousel extends NavigationMixin(LightningElement) {
+export default class FreqProdImgCarousel extends NavigationMixin(
+  LightningElement
+) {
   @api recordId;
   product;
   products;
   error;
   rendered = false;
 
-  
   navigateToViewProductPage(event) {
     const product2Id = event.currentTarget.getAttribute("data-id");
     console.log(product2Id);
     this[NavigationMixin.Navigate]({
-        type: 'standard__recordPage',
-        attributes: {
-            recordId: product2Id,
-            objectApiName: 'Product2',
-            actionName: 'view'
-        },
+      type: "standard__recordPage",
+      attributes: {
+        recordId: product2Id,
+        objectApiName: "Product2",
+        actionName: "view"
+      }
     });
   }
-  
+
   generateProductCode(productCode) {
     console.log(productCode);
     return isNaN(productCode) ? productCode : "X" + productCode;
@@ -47,8 +47,11 @@ export default class FreqProdImgCarousel extends NavigationMixin(LightningElemen
             console.log(this.generateProductCode(result[i].ProductCode));
             results[i] = {
               ...result[i],
-              srcURL: window.location.origin.replace(".lightning.force.com", "--c.documentforce.com/file-asset/")
-               + this.generateProductCode(result[i].ProductCode)
+              srcURL:
+                window.location.origin.replace(
+                  ".lightning.force.com",
+                  "--c.documentforce.com/file-asset/"
+                ) + this.generateProductCode(result[i].ProductCode)
             };
           }
           console.log(results);
