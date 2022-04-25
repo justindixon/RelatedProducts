@@ -89,12 +89,12 @@ public class FrequentlyBoughtTogetherTest {
 
   @IsTest
   public static void testFrequentlyBoughtTogether() {
-    List<frequentlyBoughtTogether.request> rqts = new List<frequentlyBoughtTogether.request>();
-    frequentlyBoughtTogether.request rqt = new frequentlyBoughtTogether.request();
+    List<FrequentlyBoughtTogether.request> rqts = new List<FrequentlyBoughtTogether.request>();
+    FrequentlyBoughtTogether.request rqt = new FrequentlyBoughtTogether.request();
     Product2 testProduct = [SELECT ID FROM PRODUCT2 LIMIT 1];
     rqt.Product2Id = testProduct.Id;
     rqts.add(rqt);
-    List<frequentlyBoughtTogether.Result> rslts = frequentlyBoughtTogether.freqProds(
+    List<FrequentlyBoughtTogether.Result> rslts = FrequentlyBoughtTogether.freqProds(
       rqts
     );
     List<Product2> rsltsProducts = rslts[0].frequentProducts;
