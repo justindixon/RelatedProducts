@@ -273,7 +273,7 @@ jobs:
   promote-package-versions:
     name: "Promote Package Versions"
     needs:
-      [lwc-tests, base-scratch-org-tests, experience-cloud-scratch-org-tests]
+      [lwc-tests, base-scratch-org-tests, create-unlocked-package-release-candidate]
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
