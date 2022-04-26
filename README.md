@@ -12,11 +12,12 @@ Top 5 Products Frequently Bought Together
 
 <!--[![View Documentation](./images/btn-view-documentation.png)](https://justindixon.github.io/RelatedProducts/)-->
 
+<!--
 ## Managed Package - v1.0.0
 
 [![Install Managed Package in a Sandbox](./images/btn-install-managed-package-sandbox.png)](https://test.salesforce.com/packaging/installPackage.apexp?mgd=true&p0=)
 [![Install Managed Package in Production](./images/btn-install-managed-package-production.png)](https://login.salesforce.com/packaging/installPackage.apexp?mgd=true&p0=)
-
+-->
 <!--[![View Milestone](./images/btn-view-managed-package-milestone.png)](https://github.com/justindixon/RelatedProducts/milestone/1)-->
 
 ---

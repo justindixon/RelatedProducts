@@ -154,4 +154,4 @@ npx prettier --write $targetreadme
 git add $targetreadme
 
 Write-Debug "Installing new package version ID $packageVersionId for target user $targetusername"
-Install-Package-Version $packageVersionId
+#Install-Package-Version $packageVersionId
