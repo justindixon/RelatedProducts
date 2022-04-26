@@ -13,7 +13,6 @@ export default class FreqProdImgCarousel extends NavigationMixin(
 
   navigateToViewProductPage(event) {
     const product2Id = event.currentTarget.getAttribute("data-id");
-    console.log(product2Id);
     this[NavigationMixin.Navigate]({
       type: "standard__recordPage",
       attributes: {
@@ -25,7 +24,6 @@ export default class FreqProdImgCarousel extends NavigationMixin(
   }
 
   generateProductCode(productCode) {
-    console.log(productCode);
     return isNaN(productCode) ? productCode : "X" + productCode;
   }
 
@@ -44,7 +42,6 @@ export default class FreqProdImgCarousel extends NavigationMixin(
                 result[i].Id +
                 "/view"
             };
-            console.log(this.generateProductCode(result[i].ProductCode));
             results[i] = {
               ...result[i],
               srcURL:
@@ -54,12 +51,10 @@ export default class FreqProdImgCarousel extends NavigationMixin(
                 ) + this.generateProductCode(result[i].ProductCode)
             };
           }
-          console.log(results);
           this.products = results;
         })
         .catch((error) => {
           this.error = error;
-          console.log(error);
         });
     }
   }

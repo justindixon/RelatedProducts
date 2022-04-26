@@ -1,18 +1,18 @@
 {
-    "packageDirectories": [
-        {
-            "path": "force-app",
-            "default": true,
-            "package": "Related-Products",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT"
-        }
-    ],
-    "name": "Related-Products",
-    "namespace": "relprods",
-    "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "54.0",
-    "packageAliases": {
-        "Related-Products": "0Ho5i000000GmasCAC"
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true,
+      "package": "Related-Products",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT"
     }
+  ],
+  "name": "Related-Products",
+  "namespace": "relprods",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "54.0",
+  "packageAliases": {
+    "Related-Products": "0Ho5i000000GmasCAC"
+  }
 }

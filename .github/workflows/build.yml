@@ -82,8 +82,8 @@ jobs:
           npm run sfdx:plugins:link:scanner
           npm run lint:verify:apex
       # TODO - uncomment - temporarily commented-out due to an issue with apexdocs in the pipeline
-      # - name: 'Verify docs are updated'
-      #   run: npm run docs:verify
+      - name: 'Verify docs are updated'
+        run: npm run docs:verify
 
       - name: "Verify formatting with Prettier"
         run: npm run prettier:verify
@@ -180,8 +180,7 @@ jobs:
 
   create-unlocked-package-release-candidate:
     name: "Create Core Package Release Candidate"
-    needs:
-      [lwc-tests, base-scratch-org-tests]
+    needs: [lwc-tests, base-scratch-org-tests]
     if: ${{ github.ref != 'refs/heads/main' }}
     runs-on: ubuntu-latest
     environment: "Demo Org"
@@ -190,7 +189,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.ref }}
-  
+
       - name: "Restore node_modules cache"
         id: cache-npm
         uses: actions/cache@v2
@@ -203,7 +202,7 @@ jobs:
       - name: "Install npm dependencies"
         if: steps.cache-npm.outputs.cache-hit != 'true'
         run: npm ci
-  
+
       - name: "Authorize Dev Hub"
         shell: bash
         run: |
@@ -214,7 +213,7 @@ jobs:
           DEV_HUB_BOT_USERNAME: ${{ secrets.DEV_HUB_BOT_USERNAME }}
           DEV_HUB_CONSUMER_KEY: ${{ secrets.DEV_HUB_CONSUMER_KEY }}
           DEV_HUB_JWT_SERVER_KEY: ${{ secrets.DEV_HUB_JWT_SERVER_KEY }}
-  
+
       - name: "Authorize Demo Org"
         shell: bash
         run: |
@@ -224,7 +223,7 @@ jobs:
           PKG_DEMO_ORG_SFDX_URL: ${{ secrets.NEBULA_PKG_DEMO_SANDBOX_SFDX_URL }}
   #
   #    - name: "Create & Install Package Version"
-  ### sfdx force:package:version:create -v admin@relatedproducts.com -p "Related-Products" -x -c  
+  ### sfdx force:package:version:create -v admin@relatedproducts.com -p "Related-Products" -x -c
   ### sfdx force:package:version:promote --package 05i5i000000GmcPAAS -n
   #      run: npx pwsh ./scripts/build/create-and-install-package-version.ps1 -targetpackagealias '"Nebula Logger - Core"' -targetreadme ./README.md -targetusername nebula-logger-package-demo
   #
