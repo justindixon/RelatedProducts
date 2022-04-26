@@ -44,7 +44,7 @@ public without sharing class FrequentlyBoughtTogether {
           Quantity > 0
           AND OrderId = :uniOrders
           AND Order.Status = 'Activated'
-          AND Product2Id !=:(Id) rqt.Product2Id
+          AND Product2Id != :(Id) rqt.Product2Id
         GROUP BY Product2Id
         ORDER BY Count(Id) DESC
         LIMIT 5

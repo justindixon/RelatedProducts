@@ -35,14 +35,14 @@ Top 5 Products Frequently Bought Together
 1. Managed Package Version.
 2. Get Apex Docs To Work.
 3. Remove Content Assets from the Package.
-3. Enable For Opportunity Products.
-4. Enable for CPQ Quote Line Products.
-5. Units Tests for LWC.
-6. Enable additional file types (other than .jpq).
-7. Custom Object to hold the top 5 related products.
-8. Scheduled Batch Job to maintain the top 5 related products every night.
-9. Image resizing functionality.
-10. Completely custom build the carousel component. (Salesforce's is a bit limited, and hard to change).
+4. Enable For Opportunity Products.
+5. Enable for CPQ Quote Line Products.
+6. Units Tests for LWC.
+7. Enable additional file types (other than .jpq).
+8. Custom Object to hold the top 5 related products.
+9. Scheduled Batch Job to maintain the top 5 related products every night.
+10. Image resizing functionality.
+11. Completely custom build the carousel component. (Salesforce's is a bit limited, and hard to change).
 
 ---
 
