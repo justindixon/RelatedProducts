@@ -13,6 +13,7 @@
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "54.0",
   "packageAliases": {
-    "Related-Products": "0Ho5i000000GmasCAC"
+    "Related-Products": "0Ho5i000000GmasCAC",
+    "Related-Products@0.1.0-NEXT-ver-0.1": "04t5i000000cIlvAAE"
   }
 }
