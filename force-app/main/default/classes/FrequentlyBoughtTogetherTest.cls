@@ -98,6 +98,6 @@ public class FrequentlyBoughtTogetherTest {
       rqts
     );
     List<Product2> rsltsProducts = rslts[0].frequentProducts;
-    System.assert(rsltsProducts.size() > 0, 'No Related Products Returned ');
+    System.assert(rsltsProducts.size() > 0, 'No Related Products Returned');
   }
 }

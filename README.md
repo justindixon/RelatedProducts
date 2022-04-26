@@ -30,7 +30,8 @@ Top 5 Products Frequently Bought Together
 
 ## Road Map
 
-1. Enable For Opportunity Products.
+1. Managed Package Version.
+2. Enable For Opportunity Products.
 2. Enable for CPQ Quote Line Products.
 3. Units Tests for LWC.
 4. Enable additional file types (other than .jpq).
