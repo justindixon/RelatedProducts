@@ -7,8 +7,8 @@ Top 5 Products Frequently Bought Together
 
 ## Unlocked Package - v1.0.0
 
-![Install Unlocked Package in a Sandbox](./images/btn-install-unlocked-package-sandbox.png)(https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5i000000cIlvAAE)
-![Install Unlocked Package in Production](./images/btn-install-unlocked-package-production.png)(https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5i000000cIlvAAE)
+[![Install Unlocked Package in a Sandbox](./images/btn-install-unlocked-package-sandbox.png)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5i000000cIlvAAE)
+[![Install Unlocked Package in Production](./images/btn-install-unlocked-package-production.png)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5i000000cIlvAAE)
 
 <!--[![View Documentation](./images/btn-view-documentation.png)](https://justindixon.github.io/RelatedProducts/)-->
 
@@ -51,12 +51,12 @@ Images need to be sized into the dimensions you require. Recommended is 240x320.
 
 Images need to be uploaded as Content Assets.
 
-[![Content Assets File Library](./images/content-assets-location.png)]
-[![Upload Button](./images/upload-content-asset-button-location.png)]
+![Content Assets File Library](./images/content-assets-location.png)
+![Upload Button](./images/upload-content-asset-button-location.png)
 
 The name of the Content Asset must match the Product Code that you want the image to display for.
 
-[![File Details](./images/upload-content-asset-screen.png)]
+![File Details](./images/upload-content-asset-screen.png)
 
 ---
 
@@ -66,7 +66,7 @@ The name of the Content Asset must match the Product Code that you want the imag
 
 ### Related Products Flow Action: Quick Start
 
-[![Flow Action](./images/flow-action.png)]
+![Flow Action](./images/flow-action.png)
 
 In your Flow you must input a single Product2 record Id. The top 5 most frequently bought products to the input Product will be returned as a list of Products.
 
