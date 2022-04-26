@@ -22,7 +22,7 @@ Top 5 Products Frequently Bought Together
 
 ---
 
-![Demo Gif](./images/ezgif-3-04dbc895bb.gif)
+![Demo Gif](./images/ezgif-3-c5774962de.gif)
 
 ## Features
 
