@@ -1,8 +1,8 @@
+DELETE [SELECT ID FROM ORDER];
+DELETE [SELECT ID FROM PRICEBOOKENTRY];
+DELETE [SELECT ID FROM PRODUCT2];
 DELETE [SELECT ID FROM ACCOUNT WHERE Name='Acct'];
 DELETE [SELECT ID FROM CONTACT WHERE LastName='contact1'];
-DELETE [SELECT ID FROM PRODUCT2];
-DELETE [SELECT ID FROM PRICEBOOKENTRY];
-DELETE [SELECT ID FROM ORDER];
 
 //For Creating Account Record.
 Account newAcct = new Account();
@@ -25,7 +25,7 @@ List<Product2> productsList = new List<Product2>();
 for(Integer i=0;i<=100;i++){
 Product2 prod = new Product2();
     prod.Name = 'Product'+i;
-    prod.ProductCode = String.valueof(i);
+    prod.ProductCode = 'relprods__X' + String.valueof(i);
     prod.Family = 'Test Practices';
     prod.IsActive = true;
     productsList.add(prod);

@@ -22,6 +22,8 @@ Top 5 Products Frequently Bought Together
 
 ---
 
+![Demo Gif](./images/ezgif-3-04dbc895bb.gif)
+
 ## Features
 
 1. Lightning Web Component showing frequently bought together products.
@@ -32,6 +34,7 @@ Top 5 Products Frequently Bought Together
 
 1. Managed Package Version.
 2. Get Apex Docs To Work.
+3. Remove Content Assets from the Package.
 3. Enable For Opportunity Products.
 4. Enable for CPQ Quote Line Products.
 5. Units Tests for LWC.
